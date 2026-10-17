@@ -266,7 +266,7 @@ body {
 /* ============ ABOUT ============ */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 
-.about-card { padding: 1.8rem; }
+.about-card { padding: 1.8rem; min-width: 0; }
 
 .about-card h3 { margin-bottom: 0.6rem; font-size: 1.1rem; color: var(--accent-2); }
 .about-card h3 + p, .about-card p { margin-bottom: 1.2rem; color: var(--muted); }
@@ -280,6 +280,7 @@ body {
   overflow: hidden;
   border: 1px solid var(--glass-border);
   background: #050810;
+  min-width: 0;
 }
 
 .code-titlebar {
@@ -299,6 +300,7 @@ body {
   font-size: 0.82rem;
   color: #c9d4e6;
   overflow-x: auto;
+  max-width: 100%;
 }
 
 .c-kw { color: #c586ff; }
@@ -362,6 +364,17 @@ body {
   transform: translateY(-3px);
 }
 
+.category-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 2.2rem 0 1.3rem;
+  padding-left: 0.9rem;
+  border-left: 3px solid var(--accent);
+}
+
+.category-title:first-of-type { margin-top: 0; }
+
 /* ============ PROJECTS ============ */
 .projects-grid {
   display: grid;
@@ -371,6 +384,8 @@ body {
 
 .project {
   padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
   transform-style: preserve-3d;
   will-change: transform;
 }
@@ -412,11 +427,15 @@ body {
 .project-meta {
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
   font-size: 0.8rem;
   color: var(--muted);
   border-top: 1px solid var(--glass-border);
   padding-top: 0.9rem;
+  margin-top: auto;
 }
+
+.project p { flex-grow: 1; }
 
 /* ============ PLANS / TIMELINE ============ */
 .timeline { position: relative; padding-left: 2rem; }
