@@ -101,8 +101,9 @@
           Я <span id="typewriter" class="accent"></span><span class="caret">|</span>
         </h2>
         <p class="lead reveal">
-          Высоконагруженные backend-системы и сервисы со сложной логикой на C# и .NET —
-          от идеи до продакшна. Краснодар · готов к удалённой работе.
+          Разрабатываю высоконагруженные backend/fullstack-системы и сервисы
+          со сложной логикой на C# и .NET — от идеи до продакшна. Краснодар ·
+          готов к удалённой работе.
         </p>
         <div class="hero-actions reveal">
           <a href="#projects" class="btn btn-primary">Смотреть проекты</a>
@@ -110,7 +111,7 @@
         </div>
         <div class="hero-stats reveal">
           <div><strong>5+</strong><span>лет в разработке</span></div>
-          <div><strong>3</strong><span>компании / роли</span></div>
+          <div><strong>3</strong><span>крупных проекта</span></div>
           <div><strong>65–80%</strong><span>покрытие тестами</span></div>
         </div>
       </div>
@@ -202,7 +203,7 @@
           <div class="skill-head"><span>Юнит-тесты / Polly / LINQ</span><span class="skill-val">0%</span></div>
           <div class="bar"><i></i></div>
         </div>
-        <div class="skill glass reveal" data-level="70">
+        <div class="skill glass reveal" data-level="80">
           <div class="skill-head"><span>Redis (кэш) / ELK / AppSec</span><span class="skill-val">0%</span></div>
           <div class="bar"><i></i></div>
         </div>
@@ -220,6 +221,71 @@
     <!-- PROJECTS -->
     <section class="section container" id="projects">
       <h2 class="section-title reveal"><span class="line"></span>Проекты</h2>
+
+      <h3 class="category-title reveal">Продуктовые проекты</h3>
+      <div class="projects-grid">
+
+        <article class="project glass reveal tilt">
+          <div class="project-top">
+            <span class="project-icon">🏦</span>
+          </div>
+          <h3>Платёжная система зелёного банка</h3>
+          <p>
+            Backend-разработка сервисов для финансовых операций (NDA). Гибкая
+            система взаимодействия с платёжным шлюзом, переиспользованная для
+            5 видов операций: I/O-очереди с ограничением пропускной способности,
+            отказоустойчивое сохранение чеков, Polly, идемпотентность.
+          </p>
+          <div class="project-tags"><span>.NET</span><span>Очереди</span><span>Polly</span><span>PostgreSQL</span><span>Postman</span><span>Redis</span></div>
+          <div class="project-meta"><span>⚡ ResponseTime 2–5с → 0.3–0.8с</span><span>СимбирСофт</span></div>
+        </article>
+
+        <article class="project glass reveal tilt">
+          <div class="project-top">
+            <span class="project-icon">📋</span>
+          </div>
+          <h3>Корпоративная система трекинга задач</h3>
+          <p>
+            Fullstack + mobile трекер задач, на который компания полностью
+            перешла в рабочих процессах. Дейлики, синхронизация и демо как
+            часть процесса разработки.
+          </p>
+          <div class="project-tags"><span>FullStack</span><span>Mobile</span><span>.NET</span><span>PostgreSQL</span><span>MAUI</span><span>JS</span></div>
+          <div class="project-meta"><span>🏢 Компания перешла на систему</span><span>Алгоритм</span></div>
+        </article>
+
+        <article class="project glass reveal tilt">
+          <div class="project-top">
+            <span class="project-icon">📡</span>
+          </div>
+          <h3>Система мониторинга опасных объектов</h3>
+          <p>
+            Мониторинг особо-опасных объектов с интеграцией большого количества
+            сервисов: нотификации, телефония, контроль оператора. Плюс генератор
+            XML-таблиц (графики, значения) на OpenXML и сервис поддержки
+            состояния клиента.
+          </p>
+          <div class="project-tags"><span>Интеграции</span><span>OpenXML</span><span>.NET</span><span>Auth</span><span>JS</span><span>Socket</span></div>
+          <div class="project-meta"><span>🔗 Множество интеграций</span><span>Алгоритм</span></div>
+        </article>
+
+        <article class="project glass reveal tilt">
+          <div class="project-top">
+            <span class="project-icon">🛒</span>
+          </div>
+          <h3>Система обратной связи сети</h3>
+          <p>
+            Система обратной связи для клиентов розничной сети: интеграция
+            Google-таблиц для аналитики и логирования, бот для нотификаций.
+            Использовалась всеми розничными точками сети.
+          </p>
+          <div class="project-tags"><span>Боты</span><span>Интеграции</span><span>.NET</span><span>JS</span><span>NodeJS</span></div>
+          <div class="project-meta"><span>📍 100% розничных точек</span><span>ДНС Ритейл</span></div>
+        </article>
+
+      </div>
+
+      <h3 class="category-title reveal">Личные проекты</h3>
       <div class="projects-grid">
 
         <article class="project glass reveal tilt">
@@ -235,28 +301,26 @@
             заказу Художественно-графического факультета. Результаты транслировались
             на гос. телеканале, II место на международной конференции.
           </p>
-          <div class="project-tags"><span>WPF</span><span>C#</span><span>Многопоточность</span></div>
-          <div class="project-meta"><span>🏆 II место на конференции</span><span>2023</span></div>
+          <div class="project-tags"><span>WPF</span><span>C#</span><span>Многопоточность</span><span>XAML</span></div>
+          <div class="project-meta"><span>🏆 II место на конференции</span><span>Искусство</span></div>
         </article>
 
         <article class="project glass reveal tilt">
           <div class="project-top">
             <span class="project-icon">🛒</span>
-            <div class="project-links"><a href="https://temir-programmer.tilda.ws/" target="_blank" rel="noopener" aria-label="Сайт-визитка">↗</a></div>
           </div>
           <h3>Магазин приложений</h3>
           <p>
             Интернет-магазин приложений с системой потокового шифрования.
             Фуллстек-разработка: от бэкенда и базы данных до вёрстки и деплоя.
           </p>
-          <div class="project-tags"><span>.NET 6</span><span>PostgreSQL</span><span>AWS</span></div>
+          <div class="project-tags"><span>.NET 6</span><span>PostgreSQL</span><span>S3</span><span>Bearer</span><span>FullStack</span></div>
           <div class="project-meta"><span>🔒 Потоковое шифрование</span><span>Интернет-магазин</span></div>
         </article>
 
         <article class="project glass reveal tilt">
           <div class="project-top">
             <span class="project-icon">🎓</span>
-            <div class="project-links"><a href="#" aria-label="GitHub">↗</a></div>
           </div>
           <h3>Сайт для тестирования студентов</h3>
           <p>
@@ -264,24 +328,8 @@
             рекомендациями на основе медианных значений. Многоролевой доступ,
             админка, удобная система создания тестов.
           </p>
-          <div class="project-tags"><span>C#</span><span>.NET 5</span><span>PostgreSQL</span></div>
+          <div class="project-tags"><span>C#</span><span>.NET 5</span><span>PostgreSQL</span><span>Auth</span><span>FullStack</span></div>
           <div class="project-meta"><span>📊 Статанализ и рекомендации</span><span>Обучение</span></div>
-        </article>
-
-        <article class="project glass reveal tilt">
-          <div class="project-top">
-            <span class="project-icon">🏦</span>
-            <div class="project-links"><a href="#" aria-label="GitHub">↗</a></div>
-          </div>
-          <h3>Гибкая система платежного шлюза</h3>
-          <p>
-            Система взаимодействия с платёжным шлюзом в зелёном банке (NDA),
-            переиспользованная для 5 видов платежей: I/O-очереди с ограничением
-            пропускной способности, отказоустойчивое сохранение чеков, Polly,
-            гарантии идемпотентности.
-          </p>
-          <div class="project-tags"><span>.NET</span><span>Очереди</span><span>Polly</span></div>
-          <div class="project-meta"><span>⚡ ResponseTime 2–5с → 0.3–0.8с</span><span>2023 — н.в.</span></div>
         </article>
 
       </div>
@@ -309,7 +357,7 @@
         <div class="timeline-item glass reveal">
           <span class="dot"></span>
           <h3>Постоянно</h3>
-          <p>Стабильно запрашиваю обратную связь и работаю над ней: код-ревью, оценка задач, собеседования, интервьюирование кандидатов.</p>
+          <p>Развиваюсь</p>
         </div>
       </div>
     </section>
@@ -324,7 +372,6 @@
           <a href="tel:+79182632817" class="btn btn-ghost">+7 (918) 263-28-17</a>
           <a href="https://t.me/BTemir" target="_blank" rel="noopener" class="btn btn-ghost">Telegram: @BTemir</a>
           <a href="https://github.com/basliney" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
-          <a href="https://temir-programmer.tilda.ws/" target="_blank" rel="noopener" class="btn btn-ghost">Сайт</a>
         </div>
       </div>
     </section>
