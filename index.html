@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Темир Баслиней — Backend-разработчик (C# / .NET)</title>
+  <meta name="description" content="Backend-разработчик Темир Баслиней: C# / .NET 5–10, ASP.NET Core, Kafka, RabbitMQ, PostgreSQL, MongoDB, Docker, AWS. Высоконагруженные системы от идеи до продакшна. 5 лет опыта." />
+  <meta name="keywords" content="Темир Баслиней, Баслиней Темир, backend разработчик, C# разработчик, .NET разработчик, ASP.NET Core, Kafka, RabbitMQ, PostgreSQL, MS SQL, MongoDB, Docker, AWS, программист Краснодар, backend удалённо" />
+  <meta name="author" content="Темир Баслиней" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#7c5cff" />
+  <link rel="canonical" href="https://basliney.github.io/" />
+
+  <!-- Open Graph (превью при шаринге в соцсетях и мессенджерах) -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:url" content="https://basliney.github.io/" />
+  <meta property="og:title" content="Темир Баслиней — Backend-разработчик (C# / .NET)" />
+  <meta property="og:description" content="Высоконагруженные backend-системы на C# / .NET: от идеи до продакшна. 5 лет опыта, наставничество, архитектура." />
+  <meta property="og:image" content="https://api.dicebear.com/9.x/notionists/svg?seed=Temir&backgroundColor=b6e3f4,c0aede,d1d4f9" />
+  <meta property="profile:first_name" content="Темир" />
+  <meta property="profile:last_name" content="Баслиней" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Темир Баслиней — Backend-разработчик (C# / .NET)" />
+  <meta name="twitter:description" content="Высоконагруженные backend-системы на C# / .NET: от идеи до продакшна. 5 лет опыта." />
+  <meta name="twitter:image" content="https://api.dicebear.com/9.x/notionists/svg?seed=Temir&backgroundColor=b6e3f4,c0aede,d1d4f9" />
+
+  <!-- Микроразметка JSON-LD (schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Темир Баслиней",
+      "alternateName": "Basliy Temir",
+      "jobTitle": "Backend-разработчик",
+      "email": "mailto:basliney@bk.ru",
+      "telephone": "+79182632817",
+      "url": "https://basliney.github.io/",
+      "image": "https://api.dicebear.com/9.x/notionists/svg?seed=Temir&backgroundColor=b6e3f4,c0aede,d1d4f9",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Краснодар",
+        "addressCountry": "RU"
+      },
+      "sameAs": [
+        "https://t.me/BTemir",
+        "https://github.com/basliney",
+        "https://temir-programmer.tilda.ws/"
+      ],
+      "knowsAbout": [
+        "C#", ".NET 5-10", "ASP.NET Core", "EF Core",
+        "Kafka", "RabbitMQ", "PostgreSQL", "MS SQL", "MongoDB",
+        "Docker", "AWS", "Redis", "Clean Architecture",
+        "Vertical Slice Architecture", "микросервисы", "высоконагруженные системы"
+      ],
+      "knowsLanguage": ["ru", "en"],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Кубанский Государственный Университет"
+      }
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Эффект прожектора под курсором -->
+  <div class="spotlight" id="spotlight"></div>
+
+  <!-- Плавающие частицы кода на фоне -->
+  <canvas id="particles"></canvas>
+
+  <header class="topbar">
+    <nav class="nav container">
+      <a href="#hero" class="logo"><span class="bracket">{</span>TB<span class="bracket">}</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">Обо мне</a></li>
+        <li><a href="#skills">Навыки</a></li>
+        <li><a href="#projects">Проекты</a></li>
+        <li><a href="#plans">Планы</a></li>
+        <li><a href="#contact" class="nav-cta">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container" id="hero">
+      <div class="hero-text">
+        <p class="eyebrow reveal">Привет, меня зовут</p>
+        <h1 class="reveal">Темир Баслиней</h1>
+        <h2 class="reveal">
+          Я <span id="typewriter" class="accent"></span><span class="caret">|</span>
+        </h2>
+        <p class="lead reveal">
+          Высоконагруженные backend-системы и сервисы со сложной логикой на C# и .NET —
+          от идеи до продакшна. Краснодар · готов к удалённой работе.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#projects" class="btn btn-primary">Смотреть проекты</a>
+          <a href="#contact" class="btn btn-ghost">Связаться</a>
+        </div>
+        <div class="hero-stats reveal">
+          <div><strong>5+</strong><span>лет в разработке</span></div>
+          <div><strong>3</strong><span>компании / роли</span></div>
+          <div><strong>65–80%</strong><span>покрытие тестами</span></div>
+        </div>
+      </div>
+
+      <div class="hero-photo reveal">
+        <div class="photo-frame" id="tiltPhoto">
+          <img src="https://sun9-46.vkuserphoto.ru/s/v1/ig2/PO7LcW5GdOyjhtYb1pzs2WymYGNdJLoBO8fGJs1aZmHXHJSnPre4hacF6_l9ronVLj-D5r8AnG0uKOlk-gqBjmzwIisNkA.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1200x1600&from=bu&cs=1200x0" alt="Фото Темира Баслинея" />
+          <div class="photo-glow"></div>
+        </div>
+        <div class="badge-float badge-1">C#</div>
+        <div class="badge-float badge-2">.NET 5–10</div>
+        <div class="badge-float badge-3">Kafka</div>
+        <div class="badge-float badge-4">AWS</div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section container" id="about">
+      <h2 class="section-title reveal"><span class="line"></span>Обо мне</h2>
+      <div class="about-grid">
+        <div class="about-card glass reveal">
+          <h3>Кто я</h3>
+          <p>
+            Backend-разработчик с 5-летним опытом создания сервисов от идеи до
+            продакшна. Специализация — высоконагруженные системы и сервисы со сложной
+            логикой: большие фоновые процессы для платежных операций, сложные выборки
+            из БД как со стороны клиента, так и со стороны БД. Занимался распиливанием
+            монолита на микросервисы.
+          </p>
+          <h3>Как работаю</h3>
+          <p>
+            Был и есть в роли наставника, лида, интервьюера: опыт руководства
+            командой/хабом, пройдена академия тимлидов и курс лидеров будущего.
+            Понимаю, почему бизнесу нужно именно то, что нужно. Активно развиваюсь
+            в разработке с агентами ИИ (Claude + GLM, qwen, ds-4-flash; OpenCode +
+            free models). Стабильно запрашиваю обратную связь и работаю над ней.
+          </p>
+        </div>
+        <div class="about-card glass reveal">
+          <h3>Опыт и роли</h3>
+          <ul class="about-list">
+            <li>🏦 Senior Backend Developer — АО «СимбирСофт» (2023 — н.в.)</li>
+            <li>🧩 Full-Stack Developer — ООО «Алгоритм» (2022 — 2023)</li>
+            <li>🛒 Backend Developer — ООО «ДНС Ритейл» (2021 — 2022)</li>
+            <li>🎓 КубГУ — Прикладная информатика, бакалавр и магистратура (2018—2024)</li>
+            <li>📚 Разрабатывал курсы для коллег и студентов: Agile, разработка с ИИ, System Design</li>
+          </ul>
+          <div class="code-window">
+            <div class="code-titlebar"><span></span><span></span><span></span></div>
+            <pre><code><span class="c-kw">public class</span> <span class="c-type">Developer</span>
+{
+    <span class="c-kw">public string</span> Name =&gt; <span class="c-str">"Темир"</span>;
+    <span class="c-kw">public bool</span> AiDriven { <span class="c-kw">get</span>; <span class="c-kw">set</span>; } = <span class="c-kw">true</span>;
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section container" id="skills">
+      <h2 class="section-title reveal"><span class="line"></span>Навыки</h2>
+      <div class="skills-grid">
+        <div class="skill glass reveal" data-level="95">
+          <div class="skill-head"><span>C# / .NET 5–10</span><span class="skill-val">0%</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="skill glass reveal" data-level="90">
+          <div class="skill-head"><span>ASP.NET Core / EF Core</span><span class="skill-val">0%</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="skill glass reveal" data-level="85">
+          <div class="skill-head"><span>PostgreSQL / MS SQL / MongoDB</span><span class="skill-val">0%</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="skill glass reveal" data-level="85">
+          <div class="skill-head"><span>Архитектура: Clean / Vertical Slice</span><span class="skill-val">0%</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="skill glass reveal" data-level="80">
+          <div class="skill-head"><span>Kafka / RabbitMQ</span><span class="skill-val">0%</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="skill glass reveal" data-level="75">
+          <div class="skill-head"><span>Docker / Docker Compose / AWS</span><span class="skill-val">0%</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="skill glass reveal" data-level="80">
+          <div class="skill-head"><span>Юнит-тесты / Polly / LINQ</span><span class="skill-val">0%</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="skill glass reveal" data-level="70">
+          <div class="skill-head"><span>Redis (кэш) / ELK / AppSec</span><span class="skill-val">0%</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+      </div>
+
+      <div class="tags reveal">
+        <span>JavaScript (ES6+)</span><span>React</span><span>HTML5</span><span>CSS3/SCSS</span>
+        <span>WPF</span><span>Unit-тесты</span><span>Polly</span><span>LINQ</span>
+        <span>Clean Architecture</span><span>Vertical Slice</span><span>Nginx</span><span>Git</span>
+        <span>CI/CD</span><span>ELK</span><span>AppSec</span><span>Scrum/Agile</span>
+        <span>Наставничество</span><span>Code review</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section container" id="projects">
+      <h2 class="section-title reveal"><span class="line"></span>Проекты</h2>
+      <div class="projects-grid">
+
+        <article class="project glass reveal tilt">
+          <div class="project-top">
+            <span class="project-icon">🎨</span>
+            <div class="project-links">
+              <a href="https://kubnews.ru/obshchestvo/2023/03/09/odin-iz-tysyachi-ili-kak-sozdat-avatar-iz-lichnykh-foto/" target="_blank" rel="noopener" aria-label="Статья в Кубанских Новостях">↗</a>
+            </div>
+          </div>
+          <h3>Система генерации фотомозаики</h3>
+          <p>
+            Конструирование изображения из нескольких сотен других фотографий по
+            заказу Художественно-графического факультета. Результаты транслировались
+            на гос. телеканале, II место на международной конференции.
+          </p>
+          <div class="project-tags"><span>WPF</span><span>C#</span><span>Многопоточность</span></div>
+          <div class="project-meta"><span>🏆 II место на конференции</span><span>2023</span></div>
+        </article>
+
+        <article class="project glass reveal tilt">
+          <div class="project-top">
+            <span class="project-icon">🛒</span>
+            <div class="project-links"><a href="https://temir-programmer.tilda.ws/" target="_blank" rel="noopener" aria-label="Сайт-визитка">↗</a></div>
+          </div>
+          <h3>Магазин приложений</h3>
+          <p>
+            Интернет-магазин приложений с системой потокового шифрования.
+            Фуллстек-разработка: от бэкенда и базы данных до вёрстки и деплоя.
+          </p>
+          <div class="project-tags"><span>.NET 6</span><span>PostgreSQL</span><span>AWS</span></div>
+          <div class="project-meta"><span>🔒 Потоковое шифрование</span><span>Интернет-магазин</span></div>
+        </article>
+
+        <article class="project glass reveal tilt">
+          <div class="project-top">
+            <span class="project-icon">🎓</span>
+            <div class="project-links"><a href="#" aria-label="GitHub">↗</a></div>
+          </div>
+          <h3>Сайт для тестирования студентов</h3>
+          <p>
+            Образовательная платформа со статистическим анализом и гибкими
+            рекомендациями на основе медианных значений. Многоролевой доступ,
+            админка, удобная система создания тестов.
+          </p>
+          <div class="project-tags"><span>C#</span><span>.NET 5</span><span>PostgreSQL</span></div>
+          <div class="project-meta"><span>📊 Статанализ и рекомендации</span><span>Обучение</span></div>
+        </article>
+
+        <article class="project glass reveal tilt">
+          <div class="project-top">
+            <span class="project-icon">🏦</span>
+            <div class="project-links"><a href="#" aria-label="GitHub">↗</a></div>
+          </div>
+          <h3>Гибкая система платежного шлюза</h3>
+          <p>
+            Система взаимодействия с платёжным шлюзом в зелёном банке (NDA),
+            переиспользованная для 5 видов платежей: I/O-очереди с ограничением
+            пропускной способности, отказоустойчивое сохранение чеков, Polly,
+            гарантии идемпотентности.
+          </p>
+          <div class="project-tags"><span>.NET</span><span>Очереди</span><span>Polly</span></div>
+          <div class="project-meta"><span>⚡ ResponseTime 2–5с → 0.3–0.8с</span><span>2023 — н.в.</span></div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PLANS -->
+    <section class="section container" id="plans">
+      <h2 class="section-title reveal"><span class="line"></span>Планы</h2>
+      <div class="timeline">
+        <div class="timeline-item glass reveal">
+          <span class="dot"></span>
+          <h3>Разработка с ИИ-агентами</h3>
+          <p>Активно развиваю разработку с использованием агентов ИИ (Claude + GLM, qwen, ds-4-flash; OpenCode + free models) и делаю это частью повседневного процесса.</p>
+        </div>
+        <div class="timeline-item glass reveal">
+          <span class="dot"></span>
+          <h3>Курсы и обмен знаниями</h3>
+          <p>Продолжаю разрабатывать курсы для коллег и студентов: Agile, разработка с ИИ, System Design — и передавать опыт команде через наставничество.</p>
+        </div>
+        <div class="timeline-item glass reveal">
+          <span class="dot"></span>
+          <h3>Рост до лида</h3>
+          <p>Опыт руководства командой/хабом, академия тимлидов и курс лидеров будущего — цель систематизировать этот путь и дальше развивать архитектурные решения.</p>
+        </div>
+        <div class="timeline-item glass reveal">
+          <span class="dot"></span>
+          <h3>Постоянно</h3>
+          <p>Стабильно запрашиваю обратную связь и работаю над ней: код-ревью, оценка задач, собеседования, интервьюирование кандидатов.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section container" id="contact">
+      <h2 class="section-title reveal"><span class="line"></span>Контакты</h2>
+      <div class="contact-card glass reveal">
+        <p>Открыт к интересным проектам и предложениям о работе · Краснодар, готов к удалённой работе.</p>
+        <div class="contact-links">
+          <a href="mailto:basliney@bk.ru" class="btn btn-primary">basliney@bk.ru</a>
+          <a href="tel:+79182632817" class="btn btn-ghost">+7 (918) 263-28-17</a>
+          <a href="https://t.me/BTemir" target="_blank" rel="noopener" class="btn btn-ghost">Telegram: @BTemir</a>
+          <a href="https://github.com/basliney" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+          <a href="https://temir-programmer.tilda.ws/" target="_blank" rel="noopener" class="btn btn-ghost">Сайт</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Темир Баслиней. Свёрстано с любовью к <span class="accent">C#</span>.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
