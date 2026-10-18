@@ -182,3 +182,185 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
+
+/* ================= 8. ОКНО ПРОЕКТА: ОПИСАНИЕ + КАРУСЕЛЬ ================= */
+const projectDetails = {
+  photomosaic: {
+    title: "Система генерации фотомозаики",
+    category: "Искусство",
+    tags: ["WPF", "C#", "Многопоточность", "XAML"],
+    images: [
+      "sources/PhotoStitcher/ps1.png",
+      "sources/PhotoStitcher/ps2.png",
+      "sources/PhotoStitcher/ps3.png",
+      "sources/PhotoStitcher/ps4.png",
+      "sources/PhotoStitcher/ps5.png",
+    ],
+    description: `
+      <p>Приложение собирает единое изображение из нескольких сотен других фотографий: каждый маленький кадр подбирается так, чтобы по цвету и тону совпасть с фрагментом итоговой картинки. Проект выполнен по заказу Художественно-графического факультета.</p>
+      <p>Работа получила публичный отклик: после релиза вышло интервью для сайта «Кубанские Новости», а результат показали на государственном телеканале.</p>
+      <p>С этим проектом я участвовал в международной конференции и занял II место.</p>
+      <p class="modal-stack">Стек: WPF, C#</p>
+      <ul>
+        <li>Сложные математические алгоритмы анализа цветовых различий и подбора похожих оттенков</li>
+        <li>Математический анализ больших объёмов данных</li>
+        <li>Работа с большими файлами, многопоточность, сегментация изображений</li>
+        <li>Оптимизация анализа и обработки изображений</li>
+      </ul>
+      <p>Ссылки: <a href="https://kubnews.ru/obshchestvo/2023/03/09/odin-iz-tysyachi-ili-kak-sozdat-avatar-iz-lichnykh-foto/" target="_blank" rel="noopener">интервью «Кубанские Новости»</a> · <a href="https://vk.com/video-186976898_456239162" target="_blank" rel="noopener">сюжет на телеканале</a></p>
+    `,
+  },
+  market: {
+    title: "Магазин приложений",
+    category: "Интернет-магазин",
+    tags: [".NET 6", "PostgreSQL", "S3", "Bearer", "FullStack"],
+    images: [
+      "sources/market/market1.png",
+      "sources/market/market2.png",
+      "sources/market/market3.png",
+      "sources/market/market4.png",
+    ],
+    description: `
+      <p>Интернет-магазин приложений: витрина, каталог и загрузка сборок. Ключевая особенность — система потокового шифрования, которая защищает распространяемые файлы приложений.</p>
+      <p>Проект сделан полностью по фуллстек-профилю: от проектирования бэкенда и базы данных до вёрстки интерфейса и деплоя в облако.</p>
+      <p class="modal-stack">Стек: .NET 6, HTML, CSS, JS, PostgreSQL, AWS</p>
+      <ul>
+        <li>Система потокового шифрования файлов приложений</li>
+        <li>Фуллстек-разработка: бэкенд, база данных, фронтенд, деплой</li>
+        <li>Хранение сборок в S3 и авторизация по Bearer-токену</li>
+      </ul>
+    `,
+  },
+  testing: {
+    title: "Сайт для тестирования студентов",
+    category: "Обучение",
+    tags: ["C#", ".NET 5", "PostgreSQL", "Auth", "FullStack"],
+    images: [
+      "sources/Testing/Testing1.jpg",
+      "sources/Testing/Testing2.jpg",
+      "sources/Testing/Testing3.jpg",
+    ],
+    description: `
+      <p>Образовательная платформа для тестирования студентов: преподаватель создаёт тесты, студенты проходят их, а система считает результаты и строит аналитику.</p>
+      <p>Ядро — статистический анализ ответов и гибкие рекомендации на основе медианных значений: по результатам подбираются темы, которые стоит подтянуть.</p>
+      <p class="modal-stack">Стек: C#, .NET 5, HTML, CSS, JS, PostgreSQL</p>
+      <ul>
+        <li>Система статистического анализа и гибких рекомендаций на основе медианных значений</li>
+        <li>Многоролевой доступ: студент, преподаватель, администратор</li>
+        <li>Админка и удобная система создания тестов</li>
+      </ul>
+    `,
+  },
+};
+
+const projectModal = document.getElementById("projectModal");
+const carouselTrack = document.getElementById("carouselTrack");
+const carouselDots = document.getElementById("carouselDots");
+const carouselCounter = document.getElementById("carouselCounter");
+const carouselViewport = projectModal.querySelector(".carousel-viewport");
+const carouselPrev = document.getElementById("carouselPrev");
+const carouselNext = document.getElementById("carouselNext");
+let slideIndex = 0;
+let slideCount = 0;
+let lastTrigger = null;
+
+function updateCarousel() {
+  carouselTrack.style.transform = `translateX(${-slideIndex * 100}%)`;
+  Array.from(carouselDots.children).forEach((dot, i) =>
+    dot.classList.toggle("active", i === slideIndex)
+  );
+  carouselCounter.textContent = `${slideIndex + 1} / ${slideCount}`;
+}
+
+function goToSlide(index) {
+  slideIndex = (index + slideCount) % slideCount;
+  updateCarousel();
+}
+
+function buildCarousel(images, alt) {
+  carouselTrack.innerHTML = "";
+  carouselDots.innerHTML = "";
+  slideCount = images.length;
+  slideIndex = 0;
+
+  images.forEach((src, i) => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = `${alt} — изображение ${i + 1}`;
+    img.loading = i === 0 ? "eager" : "lazy";
+    img.decoding = "async";
+    carouselTrack.appendChild(img);
+
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.setAttribute("aria-label", `Изображение ${i + 1}`);
+    dot.addEventListener("click", () => goToSlide(i));
+    carouselDots.appendChild(dot);
+  });
+
+  // для одного изображения стрелки и точки не нужны
+  const single = slideCount < 2;
+  carouselDots.style.display = single ? "none" : "";
+  carouselPrev.style.display = single ? "none" : "";
+  carouselNext.style.display = single ? "none" : "";
+
+  updateCarousel();
+}
+
+function openProjectModal(id) {
+  const data = projectDetails[id];
+  if (!data) return;
+
+  document.getElementById("modalTitle").textContent = data.title;
+  document.getElementById("modalCat").textContent = data.category;
+  document.getElementById("modalTags").innerHTML = data.tags
+    .map((t) => `<span>${t}</span>`)
+    .join("");
+  document.getElementById("modalDesc").innerHTML = data.description;
+  buildCarousel(data.images, data.title);
+
+  projectModal.classList.add("open");
+  projectModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  projectModal.querySelector(".modal-close").focus();
+}
+
+function closeProjectModal() {
+  projectModal.classList.remove("open");
+  projectModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+  if (lastTrigger) lastTrigger.focus();
+}
+
+document.querySelectorAll(".project-more").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    lastTrigger = btn;
+    openProjectModal(btn.dataset.project);
+  });
+});
+
+projectModal.addEventListener("click", (e) => {
+  if (e.target.hasAttribute("data-close")) closeProjectModal();
+});
+
+carouselPrev.addEventListener("click", () => goToSlide(slideIndex - 1));
+carouselNext.addEventListener("click", () => goToSlide(slideIndex + 1));
+
+document.addEventListener("keydown", (e) => {
+  if (!projectModal.classList.contains("open")) return;
+  if (e.key === "Escape") closeProjectModal();
+  else if (e.key === "ArrowLeft") goToSlide(slideIndex - 1);
+  else if (e.key === "ArrowRight") goToSlide(slideIndex + 1);
+});
+
+// свайп по карусели на тач-устройствах
+let swipeStartX = null;
+carouselViewport.addEventListener("touchstart", (e) => {
+  swipeStartX = e.touches[0].clientX;
+}, { passive: true });
+carouselViewport.addEventListener("touchend", (e) => {
+  if (swipeStartX === null) return;
+  const dx = e.changedTouches[0].clientX - swipeStartX;
+  if (Math.abs(dx) > 40) goToSlide(slideIndex + (dx < 0 ? 1 : -1));
+  swipeStartX = null;
+}, { passive: true });

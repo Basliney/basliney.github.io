@@ -303,6 +303,7 @@
           </p>
           <div class="project-tags"><span>WPF</span><span>C#</span><span>Многопоточность</span><span>XAML</span></div>
           <div class="project-meta"><span>🏆 II место на конференции</span><span>Искусство</span></div>
+          <button type="button" class="project-more" data-project="photomosaic">Подробнее</button>
         </article>
 
         <article class="project glass reveal tilt">
@@ -316,6 +317,7 @@
           </p>
           <div class="project-tags"><span>.NET 6</span><span>PostgreSQL</span><span>S3</span><span>Bearer</span><span>FullStack</span></div>
           <div class="project-meta"><span>🔒 Потоковое шифрование</span><span>Интернет-магазин</span></div>
+          <button type="button" class="project-more" data-project="market">Подробнее</button>
         </article>
 
         <article class="project glass reveal tilt">
@@ -330,6 +332,7 @@
           </p>
           <div class="project-tags"><span>C#</span><span>.NET 5</span><span>PostgreSQL</span><span>Auth</span><span>FullStack</span></div>
           <div class="project-meta"><span>📊 Статанализ и рекомендации</span><span>Обучение</span></div>
+          <button type="button" class="project-more" data-project="testing">Подробнее</button>
         </article>
 
       </div>
@@ -380,6 +383,31 @@
   <footer class="footer">
     <p>© 2026 Темир Баслиней. Свёрстано с любовью к <span class="accent">C#</span>.</p>
   </footer>
+
+  <!-- ВСПЛЫВАЮЩЕЕ ОКНО ПРОЕКТА (заполняется из script.js) -->
+  <div class="modal" id="projectModal" aria-hidden="true">
+    <div class="modal-overlay" data-close></div>
+    <div class="modal-card glass" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button type="button" class="modal-close" aria-label="Закрыть" data-close>&times;</button>
+
+      <div class="carousel">
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="carouselTrack"></div>
+        </div>
+        <button type="button" class="carousel-btn prev" id="carouselPrev" aria-label="Предыдущее изображение">&lsaquo;</button>
+        <button type="button" class="carousel-btn next" id="carouselNext" aria-label="Следующее изображение">&rsaquo;</button>
+        <div class="carousel-counter" id="carouselCounter"></div>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+
+      <div class="modal-info">
+        <span class="modal-cat" id="modalCat"></span>
+        <h3 id="modalTitle"></h3>
+        <div class="project-tags" id="modalTags"></div>
+        <div class="modal-desc" id="modalDesc"></div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
