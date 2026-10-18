@@ -102,16 +102,27 @@ const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        revealObserver.unobserve(entry.target);
+        const el = entry.target;
+        el.classList.add("visible");
+        revealObserver.unobserve(el);
+        // Снимаем ступенчатую задержку после появления: иначе она тормозит
+        // 3D-наклон карточек при наведении курсора (transition-delay общий
+        // для всех свойств, включая transform).
+        el.addEventListener(
+          "transitionend",
+          () => { el.style.transitionDelay = ""; },
+          { once: true }
+        );
       }
     });
   },
   { threshold: 0.15 }
 );
 
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 document.querySelectorAll(".reveal").forEach((el, i) => {
-  el.style.transitionDelay = `${(i % 6) * 70}ms`;
+  if (!reduceMotion) el.style.transitionDelay = `${(i % 6) * 70}ms`;
   revealObserver.observe(el);
 });
 

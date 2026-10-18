@@ -185,8 +185,8 @@ body {
 
 .photo-frame {
   position: relative;
-  width: min(320px, 80%);
-  aspect-ratio: 1;
+  width: min(340px, 80%);
+  aspect-ratio: .9;
   border-radius: 30px;
   overflow: hidden;
   border: 1px solid var(--glass-border);
@@ -388,6 +388,13 @@ body {
   flex-direction: column;
   transform-style: preserve-3d;
   will-change: transform;
+}
+
+/* Карточки с 3D-наклоном: короткий отклик transform, чтобы tilt
+   следовал за курсором без задержки (как у фото .photo-frame).
+   Правило перекрывает transition из .reveal/.glass по специфичности. */
+.project.tilt {
+  transition: opacity 0.7s ease, transform 0.15s ease-out, box-shadow 0.3s, border-color 0.3s;
 }
 
 .project-top {
