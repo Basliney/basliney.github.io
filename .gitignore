@@ -1,2 +1,4 @@
 Task.txt
 AGENTS.md
+.venv/
+__pycache__/

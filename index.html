@@ -10,6 +10,10 @@
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#7c5cff" />
   <link rel="canonical" href="https://basliney.github.io/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
 
   <!-- Open Graph (превью при шаринге в соцсетях и мессенджерах) -->
   <meta property="og:type" content="profile" />
@@ -17,15 +21,19 @@
   <meta property="og:url" content="https://basliney.github.io/" />
   <meta property="og:title" content="Темир Баслиней — Backend-разработчик (C# / .NET)" />
   <meta property="og:description" content="Высоконагруженные backend-системы на C# / .NET: от идеи до продакшна. 5 лет опыта, наставничество, архитектура." />
-  <meta property="og:image" content="https://api.dicebear.com/9.x/notionists/svg?seed=Temir&backgroundColor=b6e3f4,c0aede,d1d4f9" />
+  <meta property="og:image" content="https://basliney.github.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Темир Баслиней — Backend-разработчик (C# / .NET)" />
   <meta property="profile:first_name" content="Темир" />
   <meta property="profile:last_name" content="Баслиней" />
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Темир Баслиней — Backend-разработчик (C# / .NET)" />
   <meta name="twitter:description" content="Высоконагруженные backend-системы на C# / .NET: от идеи до продакшна. 5 лет опыта." />
-  <meta name="twitter:image" content="https://api.dicebear.com/9.x/notionists/svg?seed=Temir&backgroundColor=b6e3f4,c0aede,d1d4f9" />
+  <meta name="twitter:image" content="https://basliney.github.io/og-image.png" />
+  <meta name="twitter:image:alt" content="Темир Баслиней — Backend-разработчик (C# / .NET)" />
 
   <!-- Микроразметка JSON-LD (schema.org) -->
   <script type="application/ld+json">
@@ -39,7 +47,7 @@
       "jobTitle": "Backend-разработчик",
       "email": "mailto:basliney@bk.ru",
       "url": "https://basliney.github.io/",
-      "image": "https://api.dicebear.com/9.x/notionists/svg?seed=Temir&backgroundColor=b6e3f4,c0aede,d1d4f9",
+      "image": "https://basliney.github.io/sources/hero/hero-820.jpg",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Краснодар",
@@ -117,7 +125,10 @@
 
       <div class="hero-photo reveal">
         <div class="photo-frame" id="tiltPhoto">
-          <img src="https://sun9-8.vkuserphoto.ru/s/v1/ig2/QgNPPrJXE941ucadzyqj2e9czUD53GeUIyFY--h_pN_RXP_b-WqAuXq7sxckLDa4rtrodF17fvsmRxW64eZ7lhoY.jpg?quality=95&as=32x57,48x85,72x128,108x192,160x284,240x426,360x640,480x853,540x960,640x1137,720x1280,821x1459&from=bu&cs=821x0" alt="Фото" />
+          <picture>
+            <source type="image/webp" srcset="sources/hero/hero-410.webp 410w, sources/hero/hero-820.webp 820w" sizes="(max-width: 900px) 80vw, 340px" />
+            <img src="sources/hero/hero-820.jpg" srcset="sources/hero/hero-410.jpg 410w, sources/hero/hero-820.jpg 820w" sizes="(max-width: 900px) 80vw, 340px" width="820" height="1457" alt="Темир Баслиней" fetchpriority="high" />
+          </picture>
           <div class="photo-glow"></div>
         </div>
         <div class="badge-float badge-1">C#</div>

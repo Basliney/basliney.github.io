@@ -1,0 +1,14 @@
+{
+  "name": "Темир Баслиней — Backend-разработчик (C# / .NET)",
+  "short_name": "ТБ",
+  "description": "Портфолио backend-разработчика на C# / .NET",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#070b14",
+  "theme_color": "#7c5cff",
+  "icons": [
+    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

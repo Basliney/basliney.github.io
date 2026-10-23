@@ -190,11 +190,11 @@ const projectDetails = {
     category: "Искусство",
     tags: ["WPF", "C#", "Многопоточность", "XAML"],
     images: [
-      "sources/PhotoStitcher/ps1.png",
-      "sources/PhotoStitcher/ps2.png",
-      "sources/PhotoStitcher/ps3.png",
-      "sources/PhotoStitcher/ps4.png",
-      "sources/PhotoStitcher/ps5.png",
+      { src: "sources/PhotoStitcher/ps1.png", webp: "sources/PhotoStitcher/ps1.webp 700w", width: 700, height: 700 },
+      { src: "sources/PhotoStitcher/ps2.png", webp: "sources/PhotoStitcher/ps2.webp 700w", width: 700, height: 700 },
+      { src: "sources/PhotoStitcher/ps3.png", webp: "sources/PhotoStitcher/ps3.webp 700w", width: 700, height: 700 },
+      { src: "sources/PhotoStitcher/ps4.png", webp: "sources/PhotoStitcher/ps4.webp 700w", width: 700, height: 700 },
+      { src: "sources/PhotoStitcher/ps5.png", webp: "sources/PhotoStitcher/ps5.webp 700w", width: 700, height: 700 },
     ],
     description: `
       <p>Приложение собирает единое изображение из нескольких сотен других фотографий: каждый маленький кадр подбирается так, чтобы по цвету и тону совпасть с фрагментом итоговой картинки. Проект выполнен по заказу Художественно-графического факультета.</p>
@@ -215,10 +215,10 @@ const projectDetails = {
     category: "Интернет-магазин",
     tags: [".NET 6", "PostgreSQL", "S3", "Bearer", "FullStack"],
     images: [
-      "sources/market/market1.png",
-      "sources/market/market2.png",
-      "sources/market/market3.png",
-      "sources/market/market4.png",
+      { src: "sources/market/market1.png", webp: "sources/market/market1-960.webp 960w, sources/market/market1-1600.webp 1600w", width: 1920, height: 954 },
+      { src: "sources/market/market2.png", webp: "sources/market/market2-960.webp 960w, sources/market/market2-1600.webp 1600w", width: 1920, height: 1080 },
+      { src: "sources/market/market3.png", webp: "sources/market/market3-960.webp 960w, sources/market/market3-1600.webp 1600w", width: 1920, height: 1080 },
+      { src: "sources/market/market4.png", webp: "sources/market/market4-960.webp 960w, sources/market/market4-1600.webp 1600w", width: 1919, height: 1079 },
     ],
     description: `
       <p>Интернет-магазин приложений: витрина, каталог и загрузка сборок. Ключевая особенность — система потокового шифрования, которая защищает распространяемые файлы приложений.</p>
@@ -236,9 +236,9 @@ const projectDetails = {
     category: "Обучение",
     tags: ["C#", ".NET 5", "PostgreSQL", "Auth", "FullStack"],
     images: [
-      "sources/Testing/Testing1.jpg",
-      "sources/Testing/Testing2.jpg",
-      "sources/Testing/Testing3.jpg",
+      { src: "sources/Testing/Testing1.jpg", webp: "sources/Testing/Testing1-640.webp 640w, sources/Testing/Testing1-1280.webp 1280w", width: 1280, height: 724 },
+      { src: "sources/Testing/Testing2.jpg", webp: "sources/Testing/Testing2-640.webp 640w, sources/Testing/Testing2-1280.webp 1280w", width: 1280, height: 663 },
+      { src: "sources/Testing/Testing3.jpg", webp: "sources/Testing/Testing3-640.webp 640w, sources/Testing/Testing3-1280.webp 1280w", width: 1280, height: 576 },
     ],
     description: `
       <p>Образовательная платформа для тестирования студентов: преподаватель создаёт тесты, студенты проходят их, а система считает результаты и строит аналитику.</p>
@@ -283,13 +283,25 @@ function buildCarousel(images, alt) {
   slideCount = images.length;
   slideIndex = 0;
 
-  images.forEach((src, i) => {
+  images.forEach((item, i) => {
+    const picture = document.createElement("picture");
+
+    const source = document.createElement("source");
+    source.type = "image/webp";
+    source.srcset = item.webp;
+    source.sizes = "(max-width: 640px) 92vw, 848px";
+    picture.appendChild(source);
+
     const img = document.createElement("img");
-    img.src = src;
+    img.src = item.src;
     img.alt = `${alt} — изображение ${i + 1}`;
+    img.width = item.width;
+    img.height = item.height;
     img.loading = i === 0 ? "eager" : "lazy";
     img.decoding = "async";
-    carouselTrack.appendChild(img);
+    picture.appendChild(img);
+
+    carouselTrack.appendChild(picture);
 
     const dot = document.createElement("button");
     dot.type = "button";
